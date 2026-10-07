@@ -4,6 +4,18 @@ import java.io.*;
 
 
 public class Main {
+
+    //initializing the variables
+    private static String date;
+    private static String open;
+    private static String high;
+    private static String low;
+    private static String close;
+    private static String volume;
+    private static String adjClose;
+    private static String ticker;
+    private static String marketCap;
+
     
 //process ing the data files
     public static String processMarketData(String line) {
@@ -14,6 +26,8 @@ public class Main {
 
     // reading the data files from Dataset folder 
     public static void main(String[] args) {
+
+        //Asking the user for a 
 
         //getting the name of the data files from the Dataset folder
         String fileName = "Datasets/AAPL_2025.csv";
