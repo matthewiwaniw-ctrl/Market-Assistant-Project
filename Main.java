@@ -80,12 +80,24 @@ public class Main {
             //Getting the latest price record from the ArrayList
             Price latest = priceRecords.get(priceRecords.size() - 1);
 
+            System.out.println("Period: " + priceRecords.get(0).getDate() + " to " + latest.getDate());
             System.out.println("Latest date: " + latest.getDate());
+            System.out.printf("Open: $%.2f%n", latest.getOpen());
+            System.out.printf("High: $%.2f%n", latest.getHigh());
+            System.out.printf("Low: $%.2f%n", latest.getLow());
             System.out.printf("Close: $%.2f%n", latest.getClose());
             System.out.printf("Change: $%.2f (%.2f%%)%n",
                     latest.getChange(), latest.getPercentChange());
             System.out.printf("Trading range: $%.2f%n", latest.getRange());
-                
+            //Getting the highest close price from the ArrayList
+            Price highestClose = Price.getHighestClose(priceRecords);
+            System.out.printf("Highest close: $%.2f on %s%n",
+                    highestClose.getClose(), highestClose.getDate());
+            //Getting the lowest close price from the ArrayList
+            Price lowestClose = Price.getLowestClose(priceRecords);
+            System.out.printf("Lowest close: $%.2f on %s%n",
+                    lowestClose.getClose(), lowestClose.getDate());
+
         
     }
 }

@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Price {
     private final String date;
     private final double open;
@@ -49,5 +51,33 @@ public class Price {
 
     public double getRange() {
         return high - low;
+    }
+
+    public static Price getHighestClose(ArrayList<Price> prices) {
+        if (prices == null || prices.isEmpty()) {
+            return null;
+        }
+
+        Price highestClosePrice = prices.get(0);
+        for (Price price : prices) {
+            if (price.getClose() > highestClosePrice.getClose()) {
+                highestClosePrice = price;
+            }
+        }
+        return highestClosePrice;
+    }
+
+    public static Price getLowestClose(ArrayList<Price> prices) {
+        if (prices == null || prices.isEmpty()) {
+            return null;
+        }
+
+        Price lowestClosePrice = prices.get(0);
+        for (Price price : prices) {
+            if (price.getClose() < lowestClosePrice.getClose()) {
+                lowestClosePrice = price;
+            }
+        }
+        return lowestClosePrice;
     }
 }
