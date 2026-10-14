@@ -80,4 +80,34 @@ public class Price {
         }
         return lowestClosePrice;
     }
+
+    //getting the best trading day based on the highest percent change
+    public static Price getBestTradingDay(ArrayList<Price> prices) {
+        if (prices == null || prices.isEmpty()) {
+            return null;    
 }
+    
+        Price bestTradingDay = prices.get(0);
+        for (Price price : prices) {
+            if (price.getPercentChange() > bestTradingDay.getPercentChange()) {
+                bestTradingDay = price;
+            }
+        }
+        return bestTradingDay;
+    }
+
+    //getting the worst trading day based on the lowest percent change
+    public static Price getWorstTradingDay(ArrayList<Price> prices) {
+        if (prices == null || prices.isEmpty()) {
+            return null;
+        }
+
+        Price worstTradingDay = prices.get(0);
+        for (Price price : prices) {
+            if (price.getPercentChange() < worstTradingDay.getPercentChange()) {
+                worstTradingDay = price;
+            }
+        }
+        return worstTradingDay;
+    }
+}   

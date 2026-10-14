@@ -97,7 +97,8 @@ public class Main {
             Price lowestClose = Price.getLowestClose(priceRecords);
             System.out.printf("Lowest close: $%.2f on %s%n",
                     lowestClose.getClose(), lowestClose.getDate());
-
-        
-    }
+            
+            System.out.println("Best Trading Day: " + Price.getBestTradingDay(priceRecords).getDate());
+            System.out.println("Worst Trading Day: " + Price.getWorstTradingDay(priceRecords).getDate());
+        }
 }
