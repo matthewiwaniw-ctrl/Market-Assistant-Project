@@ -9,7 +9,7 @@ For this project, all group members were responsible for various methods in the 
 From the project root, compile and launch the application:
 
 ```bash
-javac Main.java Price.java
+javac Main.java MarketTerminal.java MarketDataManager.java MarketAnalyzer.java Price.java
 java Main
 ```
 
@@ -19,6 +19,13 @@ The menu offers:
 2. Compare two stocks' latest available records.
 3. Browse the tickers discovered from the dataset files.
 4. View a summary of latest daily stock movements.
-5. Exit.
+5. View a stock's market history.
+6. Exit.
+7. Compare at least two stocks over a selected date range. The comparison includes period return, average closing price, highest high, lowest low, and average volume.
+8. View the watchlist with each ticker's latest available local price and daily change.
+9. Add a stock to or remove a stock from the watchlist.
+10. Filter a stock's history by date range and sort by date, closing price, or volume.
+
+The watchlist is kept for the current application run. Date inputs use `YYYY-MM-DD` and include both the start and end dates.
 
 Dataset filenames must use the format `TICKER_2025.csv`, with a header row followed by `Date,Open,High,Low,Close,Volume` values. For example, `Datasets/AAPL_2025.csv` is available as ticker `AAPL`.
